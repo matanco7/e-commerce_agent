@@ -1,0 +1,47 @@
+[
+    {
+        "role": "user",
+        "content": "hi im matan",
+        "intent": "greeting"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Matan! How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "what is the status of ORD0005?",
+        "intent": "order_status"
+    },
+    {
+        "role": "assistant",
+        "content": "Order ORD0005 is currently in 'Pending' status. Is there anything else you would like to know or do?"
+    },
+    {
+        "role": "user",
+        "content": "can i return an item after 2 months from the date i have purchased it?",
+        "intent": "return_policy"
+    },
+    {
+        "role": "assistant",
+        "content": "You can return most items within 30 days of purchase for a full refund or exchange. Items must be in their original condition, with all tags and packaging intact. Please bring your receipt or proof of purchase when returning items."
+    },
+    {
+        "role": "user",
+        "content": "i want to talk to human representative",
+        "intent": "human_representative"
+    },
+    {
+        "role": "assistant",
+        "content": "I will need some information to connect you with a human representative. Please provide me with your full name, email, and phone number."
+    },
+    {
+        "role": "user",
+        "content": "matan cohen matan@hotmail 05251112",
+        "intent": "unknown"
+    },
+    {
+        "role": "assistant",
+        "content": "I have saved your information. A human representative will contact you shortly. If you have any other questions or concerns, feel free to ask."
+    }
+]

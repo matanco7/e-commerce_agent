@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+        .chat-history {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .chat-message {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+        }
+        .chat-message input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .chat-message button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .chat-message button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message.bot {
+            text-align: left;
+        }
+        .message .text {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .message.user .text {
+            background-color: #007bff;
+            color: white;
+        }
+        .message.bot .text {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const welcomeMessage = "Welcome to the E-commerce Customer Support Chatbot! Type 'exit' to end the conversation.";
+            document.getElementById('history').innerHTML += `<div class="message bot"><div class="text">${welcomeMessage}</div></div>`;
+        });
+
+        async function sendMessage() {
+            const userMessage = document.getElementById('message').value;
+            const chatHistory = document.getElementById('history').innerHTML;
+
+            let payload = {
+                message: userMessage,
+                history: chatHistory.replace(/<br\s*\/?>/gi, "\n")
+            };
+
+            document.getElementById('history').innerHTML += `<div class="message user"><div class="text">${userMessage}</div></div>`;
+            document.getElementById('message').value = ''; // Clear the input field
+
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+            document.getElementById('history').innerHTML += `<div class="message bot"><div class="text">${data.response}</div></div>`;
+            document.getElementById('history').scrollTop = document.getElementById('history').scrollHeight;
+        }
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="history" class="chat-history"></div>
+        <div class="chat-message">
+            <input type="text" id="message" name="message" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+    {
+        "role": "user",
+        "content": "hi im matan",
+        "intent": "greeting"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Matan! How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "tell me that status of ORD0006",
+        "intent": "order_status"
+    },
+    {
+        "role": "assistant",
+        "content": "Order ORD0006 has been delivered. If you need any further assistance, feel free to ask!"
+    },
+    {
+        "role": "user",
+        "content": "Can i return a perfume?",
+        "intent": "return_policy"
+    },
+    {
+        "role": "assistant",
+        "content": "Certain items such as clearance merchandise, perishable goods, and personal care items like perfumes are non-returnable. Please check the product description or ask a store associate for more details. If you have any other questions or need assistance, feel free to ask!"
+    },
+    {
+        "role": "user",
+        "content": "please let me talk to a human representative",
+        "intent": "human_representative"
+    },
+    {
+        "role": "assistant",
+        "content": "I have noted your request to speak with a human representative. We will contact you shortly. If you have any other questions in the meantime, feel free to ask!"
+    }
+]

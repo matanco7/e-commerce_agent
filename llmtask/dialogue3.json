@@ -1,0 +1,47 @@
+[
+    {
+        "role": "user",
+        "content": "hi im matan",
+        "intent": "greeting"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Matan! How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "what is the status of ORD0010?",
+        "intent": "order_status"
+    },
+    {
+        "role": "assistant",
+        "content": "Order ORD0010 has the status 'Delivered'. Is there anything else you would like to know or inquire about?"
+    },
+    {
+        "role": "user",
+        "content": "I want to return it, how will i receive my refund?",
+        "intent": "return_policy"
+    },
+    {
+        "role": "assistant",
+        "content": "Refunds will be issued to the original form of payment. If you paid by credit card, the refund will be credited to your card. If you paid by cash or check, you will receive a cash refund. \n\nIs there anything else you would like to know or do regarding your order return?"
+    },
+    {
+        "role": "user",
+        "content": "I want to speak with human representative",
+        "intent": "human_representative"
+    },
+    {
+        "role": "assistant",
+        "content": "I will need some information to connect you with a human representative. Please provide me with your full name, email, and phone number."
+    },
+    {
+        "role": "user",
+        "content": "israel israeli israel90@gmail.com 052099911124",
+        "intent": "unknown"
+    },
+    {
+        "role": "assistant",
+        "content": "Israel Israeli, you will be contacted shortly by a human representative. If you have any other questions or concerns, feel free to let me know."
+    }
+]
